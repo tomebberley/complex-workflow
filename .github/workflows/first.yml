@@ -4,19 +4,19 @@ on: push
 
 jobs:
   debian:
-    runson: debian-latest
+    runs-on: debian-latest
     steps:
     - run: date
   windows:
-    runson: windows-latest
+    runs-on: windows-latest
     steps:
     - run: date
   macos:
-    runson: macos-latest
+    runs-on: macos-latest
     steps:
     - run: date
   depends:
     needs: [debian, windows, macos]
-    runson: macos-latest
+    runs-on: macos-latest
     steps:
     - run: date
