@@ -2,3 +2,21 @@ name: first
 
 on: push
 
+jobs:
+  debian:
+    runson: debian-latest
+    steps:
+      -run: date
+  windows:
+    runson: windows-latest
+    steps:
+      -run: date
+  macos:
+    runson: macos-latest
+    steps:
+      -run: date
+  depends:
+    needs: [debian, windows, macos]
+    runson: macos-latest
+    steps:
+      -run: date
