@@ -6,17 +6,17 @@ jobs:
   debian:
     runson: debian-latest
     steps:
-      -run: date
+    - run: date
   windows:
     runson: windows-latest
     steps:
-      -run: date
+    - run: date
   macos:
     runson: macos-latest
     steps:
-      -run: date
+    - run: date
   depends:
     needs: [debian, windows, macos]
     runson: macos-latest
     steps:
-      -run: date
+    - run: date
